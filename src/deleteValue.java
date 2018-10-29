@@ -46,18 +46,19 @@ public class deleteValue {
             System.out.println("Enter value: ");
             value = scanner.nextInt();
             if (value < size - 1 && value > 1){
-                for (int j = value; j < size -1; j++){
-                    arrayValue[j]= arrayValue[j+1];
-                    if (j == size -2){
-                        arrayValue[size - 1] = "0";
-                    }
-                }
                 for (int i = 0; i < size; i++){
                     if (arrayNewValue[i].equals("0")){
                         arrayNewValue[i] = arrayValue[value];
                         break;
                     }
                 }
+                for (int j = value; j < size -1; j++){
+                    arrayValue[j]= arrayValue[j+1];
+                    if (j == size -2){
+                        arrayValue[size - 1] = "0";
+                    }
+                }
+
             } else System.out.println("Can't insert!");
         } while (value != size);
     }
